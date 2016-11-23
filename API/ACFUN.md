@@ -54,7 +54,7 @@
 - `captcha`: 网页验证码
 
 ### 2.4 使用手机号码注册
-**地址**： `http://www.acfun.tv//mobileRegister.aspx?code=666666&mobile=*&password=123456&password2=123456&username=aaaaadsda`
+**地址**： `http://www.acfun.tv//mobileRegister.aspx`
 
 **请求方式**： `POST`
 
@@ -95,7 +95,7 @@
 - `channel`: 未知
 
 ## 5 私信
-**地址**： `http://www.acfun.tv/api/mail.aspx?name=getGroups&page=1`
+**地址**： `http://www.acfun.tv/api/mail.aspx`
 
 **请求方式**： `GET`
 
