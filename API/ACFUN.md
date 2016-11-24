@@ -173,7 +173,7 @@
 
 **参数**:
 
-- `pageSize:`每页显示多少,最高为`20`
+- `pageSize`:每页显示多少,最高为`20`
 
 - `pageNo`:页数,从 `1` 开始
 
@@ -183,7 +183,7 @@
 
 **参数**:
 
-- `pageSize:`每页显示多少,最高为`20`
+- `pageSize`:每页显示多少,最高为`20`
 
 - `pageNo`:页数,从 `1` 开始
 
@@ -209,7 +209,7 @@
 
 - `userId`:用户id
 
-- `pageSize:`每页显示多少,最高为`20`
+- `pageSize`:每页显示多少,最高为`20`
 
 - `pageNo`:页数,从 `1` 开始
 
@@ -224,8 +224,96 @@
 
 - `userId`:用户id
 
-- `pageSize:`每页显示多少,最高为`20`
+- `pageSize`:每页显示多少,最高为`20`
 
 - `pageNo`:页数,从 `1` 开始
 
 - `channelId`:频道id,默认为 `0`。频道:`动画:1`,`音乐:58`,`舞蹈:123`,`游戏:59`,`娱乐:60`,`科技:70`,`影视:68`,`体育:`69,`彼女:128`,`鱼塘:125`,`文章:63`。
+
+# 二、投稿类
+
+## 1 收藏投稿
+
+**地址**: `http://www.acfun.tv/member/collect.aspx`
+
+**参数**:
+
+- `cId`:投稿id，不用带上开头的`ac` 。
+
+- `operate`:操作id,收藏为 `1` ,取消收藏为 `0` 。
+
+## 2 投香蕉
+
+**地址**: `http://www.acfun.tv/banana/throwBanana.aspx`
+
+**参数**:
+
+- `contentId`:投稿id，不用带上开头的`ac` 。
+
+- `count`:投香蕉数，最少1， 最高5。
+
+- `userId`:用户id,自己的。
+
+## 3 获取评论列表
+
+**地址**: `http://www.acfun.tv/comment_list_json.aspx`
+
+**参数**:
+
+- `contentId`:投稿id，不用带上开头的`ac` 。
+
+- `currentPage`:页数。
+
+## 4 获取弹幕列表
+
+**地址**: `http://danmu.aixifan.com/V3/(contentId)_(part)/(page)/500`
+
+**参数**:
+
+- `contentId`:投稿id，不用带上开头的`ac` 。
+
+- `page`:页数。
+
+- `part`:投稿分P。从`1` 开始。
+
+## 5 获取投稿TAG
+
+**地址**: `http://www.acfun.tv/member/collect_up_exist.aspx`
+
+**参数**:
+
+- `contentId`:投稿id，不用带上开头的`ac` 。
+
+## 6 搜索
+
+**地址**: `http://api.aixifan.com/searches/channel`
+
+**需要带上的header**:
+
+- `deviceType:2`
+
+**参数**:
+
+- `sort`:搜索结果排序，`最新发布:4`，`最新回复:5`，`最多围观:1`，`最多评论:2`，。
+
+- `pageNo`:页数。
+
+- `pageSize`:每页显示多少,最高为`20`
+
+- `recommendSize`:未知，默认 `6`。
+
+- `channelIds`:频道id。
+
+- `q`:搜索关键词，选填。
+
+# 三、网页类
+
+## 1.调用左下角通知
+
+**函数**: `$.info` ( `mode` , `text` );
+
+**参数**:
+
+- `mode`: 模式。`info`为信息，蓝色的；`error`为错误，红色的；`success`为成功，绿色的；`warning`为警告，黄色的；
+
+- `text`: 通知内容，只能为文本。
